@@ -1,0 +1,14 @@
+{
+    "name": "Structure",
+    "alias": "structure",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\Structure\\Providers\\StructureServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

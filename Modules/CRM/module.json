@@ -1,0 +1,17 @@
+{
+    "name": "CRM",
+    "alias": "crm",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "Modules\\CRM\\Providers\\CRMServiceProvider",
+        "Modules\\CRM\\Providers\\EventServiceProvider"
+    ],
+    "aliases": {},
+    "files": [
+        "start.php"
+    ],
+    "requires": []
+}
