@@ -15,10 +15,11 @@
   
   <!-- begin header-nav -->
   <ul class="navbar-nav navbar-right">
+   <!-- <li><a href="#modal-message" class="btn btn-sm btn-primary" data-toggle="modal">Demo</a></li>-->
     <li>
-      <form class="navbar-form">
+      <form class="navbar-form" action="/search" method="GET">
         <div class="form-group">
-          <input type="text" class="form-control" placeholder="Enter keyword" />
+          <input type="text" class="form-control" name="q" placeholder="Что вы хотите найти?" />
           <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
         </div>
       </form>
@@ -33,6 +34,15 @@
       <div class="dropdown-menu dropdown-menu-right">
         <a href="/personal" class="dropdown-item">Show Profile</a>
         <a href="/personal/edit" class="dropdown-item">Edit Profile</a>
+        <a class="dropdown-item" href="{{ route('logout') }}"
+           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+          {{ __('Logout') }}
+        </a>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+          @csrf
+        </form>
 
       </div>
     </li>

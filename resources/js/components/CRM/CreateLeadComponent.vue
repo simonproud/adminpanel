@@ -10,7 +10,8 @@
             <b-row>
                 <b-col md="6"><v-select class="text-inverse" label="label" name="operator" :options="users" placeholder="Выберите оператора" v-model="operator"> <template slot="option" slot-scope="option">
                     {{ option.label }}
-                </template></v-select>
+                </template></v-select><br/>
+                    <input type="text" name="source" class="form-control" placeholder="Источник заявки" v-model="asource">
                 </b-col>
 
 
@@ -49,6 +50,7 @@ const items = [];
                 options: [],
                 aname: '',
                 operator: '',
+                asource: '',
                 description: '',
                 additional:{},
                 cstmf: JSON.parse(this.cstmfields),
@@ -65,6 +67,7 @@ event.preventDefault();
                 //action="/crm/settings/savefield"
                 axios.post('/crm/api/create-lead', {
                     name: this.aname,
+                    source: this.asource,
                     id: this.idlead,
                     operator: this.operator,
                     description: this.description,

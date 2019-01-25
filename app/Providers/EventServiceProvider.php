@@ -18,9 +18,13 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        \Modules\CRM\Events\LeadCreated::class => [
+            \Modules\CRM\Listeners\LeadCreated::class,
+            \Modules\CRM\Listeners\NotifyLeadCreated::class,
+        ],
     ];
 
-    /**
+    /**CRM
      * Register any events for your application.
      *
      * @return void

@@ -1,6 +1,7 @@
 <template>
     <div>
         <a class="btn btn-success text-white" v-on:click="formvisible = !formvisible">Добавить запись</a>
+        <a class="btn btn-success text-white" v-on:click="inviteUser">Пригласить сотрудника</a>
         <div id="edit-panel" v-if="formvisible" class="view-state edit-container">
             <div class="item item-half">
                 <div class="input-node-container">
@@ -42,6 +43,78 @@
             }
         },
         methods: {
+            inviteUser(){
+                swal({
+                    text:"Введите email будущего сотрудника:",
+                    content: "input",
+                    attributes:{
+                        name:'email',
+                    },
+                    buttons: {
+                        cancel: {
+                            text: "Cancel",
+                            value: 'cancel',
+                            visible: true,
+                            className: "btn",
+                            closeModal: true,
+                        },
+                        confirm:{
+                            text: "OK",
+                            value: true,
+                            visible: true,
+                            className: "btn btn-success",
+                            closeModal: true,
+                        }
+                    }
+                })
+                    .then((value) => {
+
+                        if(value != 'cancel'){
+                            console.log(value);
+                        axios.post('/structure/invite', {
+                           email:`${value}`,
+                        })
+                            .then(function (response) {
+                               if(response.data.status == 'success'){
+                                    swal("Успешно!", "Письмо отправлено", "success", {
+                                        icon: 'success',
+                                        buttons: {
+                                            success:{
+                                                text:'OK',
+                                                className:'btn btn-success'
+                                            }
+                                        }
+                                    });
+                               }else{
+                                   console.log(response);
+                                   swal("Ошибка!", "Проверьте правильность ввода почтового адреса", "success", {
+                                       icon: 'error',
+                                       dangerMode:true,
+                                       buttons: {
+                                           success:{
+                                               text:'OK',
+                                               className:'btn btn-danger'
+                                           }
+                                       }
+                                   });
+                               }
+                            })
+                            .catch(function (error) {
+                                swal("Ошибка!", "Проверьте правильность ввода почтового адреса", "success", {
+                                    icon: 'error',
+                                    dangerMode:true,
+                                    buttons: {
+                                        success:{
+                                            text:'OK',
+                                            className:'btn btn-danger'
+                                        }
+                                    }
+                                });
+                                console.log(error);
+                            });
+                        }
+                    });
+            },
             mountOrgchart() {
                 this.$children.forEach((item) => {
                     item.orgchart !== undefined ? this.orgchart = item.orgchart : null
@@ -158,10 +231,10 @@
                 name: 'Генеральный директор',
                 content: '<b>Брякунов Александр Владимирович</b>',
                 children: [
-                    { name: 'Отдел маркетинга' ,content: '<b>????????????????</b>',
+                    { name: 'Отдел маркетинга' ,content: '<b>Килимистый Иван Иванович</b>',
                         children: [
                             { name: 'Программист',  content: 'Гординов Семён Игоревич', },
-                            { name: 'Дизайнер',  content: 'Плющенко Алексей Сергеевич', },
+                           // { name: 'Дизайнер',  content: 'Ющенко Алексей Сергеевич', },
                         ]
                     },
                     {

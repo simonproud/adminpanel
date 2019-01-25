@@ -10011,7 +10011,7 @@ a.inverse-mode.widget-card {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
-	position: relative;
+	/*position: relative;*/
 }
 .list-email .email-info {
 	position: relative;
@@ -10094,7 +10094,7 @@ a.inverse-mode.widget-card {
 .list-email .email-info > a {
 	margin-right: -115px;
 	padding-right: 100px;
-	position: relative;
+	/*position: relative;*/
 }
 .list-email .email-time {
 	position: absolute;
@@ -10113,7 +10113,7 @@ a.inverse-mode.widget-card {
     height: 30px;
     line-height: 30px;
     text-align: center;
-    margin: -5px 5px -5px -12px;
+    margin: -5px 0px -5px 0px;
 }
 .list-email .email-checkbox label {
     color: #e2e7eb;
@@ -11336,7 +11336,7 @@ body.flat-black {
     float: none;
 }
 .vertical-box-row > .vertical-box-cell > .vertical-box-inner-cell {
-    position: absolute;
+   /* position: absolute;*/
     top: 0;
     bottom: 0;
     left: 0;

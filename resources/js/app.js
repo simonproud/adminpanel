@@ -28,6 +28,7 @@ Vue.component('v-select', vSelect)
 Vue.component('notifications-header', require('./components/NotificationsComponent.vue'));
 Vue.component('leads-table-component', require('./components/CRM/LeadsTableComponent.vue'));
 Vue.component('clients-table-component', require('./components/CRM/ClientsTableComponent.vue'));
+Vue.component('wizard-order-client-contact', require('./components/CRM/WizardOrderClientContact.vue'));
 Vue.component('client-create', require('./components/CRM/CreateClientComponent.vue'));
 Vue.component('contacts-table-component', require('./components/CRM/ContactsTableComponent.vue'));
 Vue.component('lead-create', require('./components/CRM/CreateLeadComponent.vue'));
@@ -36,15 +37,28 @@ Vue.component('contact-create', require('./components/CRM/CreateContactComponent
 Vue.component('orders-table-component', require('./components/CRM/OrdersTableComponent.vue'));
 Vue.component('leads-table-detail', require('./components/CRM/TableComponent/LeadsTableDetail.vue'));
 Vue.component('select-client-field', require('./components/CRM/TableComponent/SelectClientField.vue'));
+Vue.component('select-contact-field', require('./components/CRM/TableComponent/SelectContactField.vue'));
 Vue.component('orders-table-detail', require('./components/CRM/TableComponent/OrdersTableDetail.vue'));
 Vue.component('fields-cstm-list', require('./components/CRM/FieldsCstmList'));
+Vue.component('mailbox-settings-users', require('./components/Mailbox/MailboxSettingsUsers.vue'));
+Vue.component('chart-leads-orders', require('./components/CRM/charts/ChartLeadsOrders.vue'));
+Vue.component('status-modal', require('./components/CRM/StatusModal.vue'));
+
+
 Vue.component('import', require('./components/Import/Import.vue'));
+
+
+
 
 
 Vue.component('c-structure', require('./components/Structure/StructureComponent.vue'));
 
 Vue.component('m-field-sel', require('./components/Import/SelectModuleFields.vue'));
 Vue.component('import-parse-panel', require('./components/Import/ImportParsePanel.vue'));
+Vue.component('mango-phone-client-card', require('./components/MangoPhone/MangoPhoneClientModal.vue'));
+
+Vue.component('mailbox-compose', require('./components/Mailbox/MailboxCompose.vue'));
+Vue.component('mailbox-inbox', require('./components/Mailbox/MailboxInbox.vue'));
 
 
 

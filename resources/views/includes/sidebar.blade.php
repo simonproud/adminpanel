@@ -4,7 +4,7 @@
     <!-- begin sidebar user -->
     <ul class="nav">
       <li class="nav-profile">
-        <a href="javascript:;" data-toggle="nav-profile">
+        <a href="/personal" data-toggle="nav-profile">
           <div class="image">
             @isset($USER_AVATAR) <img src="{{$USER_AVATAR}}" alt="" />@endisset
           </div>

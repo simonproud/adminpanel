@@ -38,8 +38,8 @@ const items = [];
                 this.search(loading, search, this);
             },
             search: _.debounce(function (loading, search, vm) {
-                fetch('http://151.248.113.174/crm/api/get-clients?q='+
-                    escape(search)).
+                fetch('https://homemarketing.ru/crm/api/get-clients?q='+
+                    search).
                 then(function (res) {
                     res.json().then(function (json) {return vm.options = json.items;});
                     loading(false);

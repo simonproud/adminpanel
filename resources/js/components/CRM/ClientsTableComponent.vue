@@ -56,7 +56,8 @@
                  :sort-direction="sortDirection"
                  @filtered="onFiltered"
            >
-            <template slot="name" slot-scope="row">{{row.value.first}} {{row.value.last}}</template>
+            <template slot="first_name" slot-scope="row"> {{row.item.first_name}}</template>
+              <template slot="id" slot-scope="row"><a :href="'/crm/clients/show/'+row.item.id">{{row.item.id}}</a></template>
             <template slot="isActive" slot-scope="row">{{row.value?'Yes :)':'No :('}}</template>
             <template slot="actions" slot-scope="row">
                 <!-- We use @click.stop here to prevent a 'row-clicked' event from also happening -->

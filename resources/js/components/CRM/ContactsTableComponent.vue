@@ -56,6 +56,7 @@
                  :sort-direction="sortDirection"
                  @filtered="onFiltered"
            >
+              <template slot="id" slot-scope="row"><a :href="'/crm/contacts/show/'+row.item.id">{{row.item.id}}</a></template>
             <template slot="name" slot-scope="row">{{row.value.first}} {{row.value.last}}</template>
             <template slot="isActive" slot-scope="row">{{row.value?'Yes :)':'No :('}}</template>
             <template slot="actions" slot-scope="row">

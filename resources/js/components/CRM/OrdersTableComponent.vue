@@ -56,7 +56,8 @@
                  :sort-direction="sortDirection"
                  @filtered="onFiltered"
            >
-            <template slot="name" slot-scope="row">{{row.value.first}} {{row.value.last}}</template>
+              <template slot="id" slot-scope="row"><a :href="'/crm/orders/show/'+row.item.id">{{row.item.id}}</a></template>
+
             <template slot="isActive" slot-scope="row">{{row.value?'Yes :)':'No :('}}</template>
             <template slot="actions" slot-scope="row">
                 <!-- We use @click.stop here to prevent a 'row-clicked' event from also happening -->
@@ -70,7 +71,7 @@
             <template slot="row-details" slot-scope="row">
                 <b-card>
                     <ul>
-                        <leads-table-detail :infoItem="row.item"></leads-table-detail>
+                        <leads-table-detail @deletedrow="getItems" :infoItem="row.item"></leads-table-detail>
                     </ul>
                 </b-card>
             </template>
@@ -99,15 +100,9 @@ const items = [];
                 items: items,
                 fields: [
                     { key: 'id', label: 'Номер заказа', sortable: true, sortDirection: 'desc' },
-                    { key: 'taker', label: 'Приёмщик', sortable: true, 'class': 'text-center' },
-                    { key: 'manager', label: 'Менеджер', sortable: true, 'class': 'text-center' },
-                    { key: 'status', label: 'Статус', sortable: true },
-                    { key: 'device', label: 'Устройство', sortable: true },
+                    { key: 'name', label: 'Наименование заказа' },
+                    { key: 'description', label: 'Описание' },
                     { key: 'cost', label: 'Стоимость', sortable: true },
-                    { key: 'paid', label: 'Оплачено', sortable: true },
-                    { key: 'client', label: 'Клиент', sortable: true },
-                    { key: 'priority', label: 'Приоритет', sortable: true },
-                    { key: 'sklad', label: 'Склад', sortable: true },
                     { key: 'actions', label: '' }
                 ],
                 currentPage: 1,

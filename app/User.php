@@ -6,12 +6,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Auth;
 use Spatie\Permission\Traits\HasRoles;
+use Laravel\Scout\Searchable;
 
 class User extends Authenticatable
 {
-    use Notifiable;
-	
-	use HasRoles;
+    use Notifiable, HasRoles;
+
 	
 	
     /**
@@ -32,6 +32,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function mailserverAuth(){
+        return $this->hasOne('Modules\Mailbox\Entities\MailserverAuth');
+    }
+
 	public function myFields()
     {
 		$instance = $this->hasMany('App\UserInfo');

@@ -1,13 +1,13 @@
 <template>
     <b-container fluid>
         <div class="btn-group">
-            <b-button :href="'/crm/orders/create?lead='+item.item.id" variant="outline-success">Создать заказ</b-button>
+            <b-button :href="'/crm/orders/create?lead='+item.item.id+'&contact=1&client=1'" variant="outline-success">Создать заказ + клиент + контакт</b-button>
             <a href="#" class="btn btn-outline-success dropdown-toggle"
                data-toggle="dropdown"></a>
             <ul class="dropdown-menu pull-right">
-                <li><a :href="'/crm/orders/create?lead='+item.item.id+'&contact=1&client=1'" >Создать заказ + клиент + контакт</a></li>
-                <li><a :href="'/crm/orders/create?lead='+item.item.id+'&client=1'" >Создать заказ + клиент</a></li>
-                <li><a :href="'/crm/orders/create?lead='+item.item.id+'&contact=1'">Создать заказ + контакт</a></li>
+                <li><a :href="'/crm/orders/create?lead='+item.item.id+''" >Создать заказ</a></li>
+               <!-- <li><a :href="'/crm/orders/create?lead='+item.item.id+'&client=1'" >Создать заказ + клиент</a></li>
+                <li><a :href="'/crm/orders/create?lead='+item.item.id+'&contact=1'">Создать заказ + контакт</a></li> -->
             </ul>
         </div>
 

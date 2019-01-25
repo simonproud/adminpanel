@@ -82,7 +82,7 @@
 						@isset($USER_INSTAGRAM)
 							<tr class="">
 								<td class="field">Instagram:</td>
-								<td><a href="http://instagram.com/_u/{{$USER_INSTAGRAM}}/" target="_blank">https://www.instagram.com/{{$USER_INSTAGRAM}}/</a></td>
+								<td><a href="{{$USER_INSTAGRAM}}" target="_blank">{{$USER_INSTAGRAM}}</a></td>
 							</tr>
 
 						@endisset
@@ -99,7 +99,7 @@
 		</div>
 
 	</div>
-
+<!--
 	<div class="panel panel-inverse" data-sortable-id="ui-widget-1">
 		<div class="panel-heading">
 			<div class="panel-heading-btn">
@@ -153,6 +153,6 @@
 			</div>
 			</div>
 	</div>
-	</div>
+	</div>-->
 
 @endsection

@@ -164,6 +164,11 @@ return [
         App\Providers\UserDataProvider::class,
 	    Arrilot\Widgets\ServiceProvider::class,
         Telegram\Bot\Laravel\TelegramServiceProvider::class,
+        Cyberduck\LaravelExcel\ExcelLegacyServiceProvider::class,
+        ElForastero\Transliterate\TransliterationServiceProvider::class,
+        Webklex\IMAP\Providers\LaravelServiceProvider::class,
+        Laravel\Scout\ScoutServiceProvider::class,
+        ScoutEngines\Elasticsearch\ElasticsearchProvider::class,
     ],
 
     /*
@@ -214,7 +219,9 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 	    'Widget'       => Arrilot\Widgets\Facade::class,
 	    'AsyncWidget'  => Arrilot\Widgets\AsyncFacade::class,
-        'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class
+        'Telegram'  => Telegram\Bot\Laravel\Facades\Telegram::class,
+        'Transliterate' => ElForastero\Transliterate\TransliterationFacade::class,
+        'ImapClient' => Webklex\IMAP\Facades\Client::class,
     ],
 
 ];
